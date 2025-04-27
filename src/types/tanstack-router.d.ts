@@ -27,6 +27,7 @@ declare module '@tanstack/react-router' {
       | '/chats'
       | '/help-center'
       | '/tasks'
+      | '/store'
       | '/users'
       | '/events'
       | '/habits'

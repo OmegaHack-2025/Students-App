@@ -10,6 +10,7 @@ import {
   GraduationCap,
   HeartPulse,
   House,
+  ShoppingBasket,
 } from 'lucide-react'
 import { type SidebarData } from '../types'
 
@@ -66,9 +67,9 @@ export const sidebarData: SidebarData = {
           icon: IconCalendar,
         },
         {
-          title: 'Tasks',
-          url: '/tasks',
-          icon: IconChecklist,
+          title: 'Tienda',
+          url: '/store',
+          icon: ShoppingBasket,
         },
       ],
     },
