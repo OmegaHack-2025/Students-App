@@ -30,6 +30,7 @@ declare module '@tanstack/react-router' {
       | '/users'
       | '/events'
       | '/habits'
+      | '/dashboard'
       | (string & {})
       | undefined
   }

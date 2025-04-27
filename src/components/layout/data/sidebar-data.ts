@@ -13,7 +13,13 @@ import {
   IconUserCog,
   IconUsers,
 } from '@tabler/icons-react'
-import { AudioWaveform, GalleryVerticalEnd, GraduationCap } from 'lucide-react'
+import {
+  AudioWaveform,
+  GalleryVerticalEnd,
+  GraduationCap,
+  HeartPulse,
+  House,
+} from 'lucide-react'
 import { type SidebarData } from '../types'
 
 export const sidebarData: SidebarData = {
@@ -44,9 +50,9 @@ export const sidebarData: SidebarData = {
       title: 'General',
       items: [
         {
-          title: 'Dashboard',
+          title: 'Inicio',
           url: '/',
-          icon: IconLayoutDashboard,
+          icon: House,
         },
         {
           title: 'Students',
@@ -54,9 +60,14 @@ export const sidebarData: SidebarData = {
           icon: IconUsers,
         },
         {
-          title: 'Habits',
+          title: 'Dashboard',
+          url: '/dashboard',
+          icon: IconLayoutDashboard,
+        },
+        {
+          title: 'Hábitos',
           url: '/habits',
-          icon: IconCalendar,
+          icon: HeartPulse,
         },
         {
           title: 'Events',
