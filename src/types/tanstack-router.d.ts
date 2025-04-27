@@ -28,7 +28,8 @@ declare module '@tanstack/react-router' {
       | '/help-center'
       | '/tasks'
       | '/users'
-      | '/events' // Agregamos la ruta de eventos
+      | '/events'
+      | '/habits'
       | (string & {})
       | undefined
   }

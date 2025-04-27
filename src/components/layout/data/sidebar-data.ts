@@ -54,6 +54,11 @@ export const sidebarData: SidebarData = {
           icon: IconUsers,
         },
         {
+          title: 'Habits',
+          url: '/habits',
+          icon: IconCalendar,
+        },
+        {
           title: 'Events',
           url: '/events',
           icon: IconCalendar,

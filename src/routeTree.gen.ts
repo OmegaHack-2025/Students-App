@@ -28,6 +28,7 @@ import { Route as AuthenticatedUsersIndexImport } from './routes/_authenticated/
 import { Route as AuthenticatedTasksIndexImport } from './routes/_authenticated/tasks/index'
 import { Route as AuthenticatedSettingsIndexImport } from './routes/_authenticated/settings/index'
 import { Route as AuthenticatedHelpCenterIndexImport } from './routes/_authenticated/help-center/index'
+import { Route as AuthenticatedHabitsIndexImport } from './routes/_authenticated/habits/index'
 import { Route as AuthenticatedEventsIndexImport } from './routes/_authenticated/events/index'
 import { Route as AuthenticatedChatsIndexImport } from './routes/_authenticated/chats/index'
 import { Route as AuthenticatedAppsIndexImport } from './routes/_authenticated/apps/index'
@@ -143,6 +144,12 @@ const AuthenticatedHelpCenterIndexRoute =
     path: '/help-center/',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
+
+const AuthenticatedHabitsIndexRoute = AuthenticatedHabitsIndexImport.update({
+  id: '/habits/',
+  path: '/habits/',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 
 const AuthenticatedEventsIndexRoute = AuthenticatedEventsIndexImport.update({
   id: '/events/',
@@ -334,6 +341,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedEventsIndexImport
       parentRoute: typeof AuthenticatedRouteImport
     }
+    '/_authenticated/habits/': {
+      id: '/_authenticated/habits/'
+      path: '/habits'
+      fullPath: '/habits'
+      preLoaderRoute: typeof AuthenticatedHabitsIndexImport
+      parentRoute: typeof AuthenticatedRouteImport
+    }
     '/_authenticated/help-center/': {
       id: '/_authenticated/help-center/'
       path: '/help-center'
@@ -396,6 +410,7 @@ interface AuthenticatedRouteRouteChildren {
   AuthenticatedAppsIndexRoute: typeof AuthenticatedAppsIndexRoute
   AuthenticatedChatsIndexRoute: typeof AuthenticatedChatsIndexRoute
   AuthenticatedEventsIndexRoute: typeof AuthenticatedEventsIndexRoute
+  AuthenticatedHabitsIndexRoute: typeof AuthenticatedHabitsIndexRoute
   AuthenticatedHelpCenterIndexRoute: typeof AuthenticatedHelpCenterIndexRoute
   AuthenticatedTasksIndexRoute: typeof AuthenticatedTasksIndexRoute
   AuthenticatedUsersIndexRoute: typeof AuthenticatedUsersIndexRoute
@@ -407,6 +422,7 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedAppsIndexRoute: AuthenticatedAppsIndexRoute,
   AuthenticatedChatsIndexRoute: AuthenticatedChatsIndexRoute,
   AuthenticatedEventsIndexRoute: AuthenticatedEventsIndexRoute,
+  AuthenticatedHabitsIndexRoute: AuthenticatedHabitsIndexRoute,
   AuthenticatedHelpCenterIndexRoute: AuthenticatedHelpCenterIndexRoute,
   AuthenticatedTasksIndexRoute: AuthenticatedTasksIndexRoute,
   AuthenticatedUsersIndexRoute: AuthenticatedUsersIndexRoute,
@@ -436,6 +452,7 @@ export interface FileRoutesByFullPath {
   '/apps': typeof AuthenticatedAppsIndexRoute
   '/chats': typeof AuthenticatedChatsIndexRoute
   '/events': typeof AuthenticatedEventsIndexRoute
+  '/habits': typeof AuthenticatedHabitsIndexRoute
   '/help-center': typeof AuthenticatedHelpCenterIndexRoute
   '/settings/': typeof AuthenticatedSettingsIndexRoute
   '/tasks': typeof AuthenticatedTasksIndexRoute
@@ -461,6 +478,7 @@ export interface FileRoutesByTo {
   '/apps': typeof AuthenticatedAppsIndexRoute
   '/chats': typeof AuthenticatedChatsIndexRoute
   '/events': typeof AuthenticatedEventsIndexRoute
+  '/habits': typeof AuthenticatedHabitsIndexRoute
   '/help-center': typeof AuthenticatedHelpCenterIndexRoute
   '/settings': typeof AuthenticatedSettingsIndexRoute
   '/tasks': typeof AuthenticatedTasksIndexRoute
@@ -489,6 +507,7 @@ export interface FileRoutesById {
   '/_authenticated/apps/': typeof AuthenticatedAppsIndexRoute
   '/_authenticated/chats/': typeof AuthenticatedChatsIndexRoute
   '/_authenticated/events/': typeof AuthenticatedEventsIndexRoute
+  '/_authenticated/habits/': typeof AuthenticatedHabitsIndexRoute
   '/_authenticated/help-center/': typeof AuthenticatedHelpCenterIndexRoute
   '/_authenticated/settings/': typeof AuthenticatedSettingsIndexRoute
   '/_authenticated/tasks/': typeof AuthenticatedTasksIndexRoute
@@ -518,6 +537,7 @@ export interface FileRouteTypes {
     | '/apps'
     | '/chats'
     | '/events'
+    | '/habits'
     | '/help-center'
     | '/settings/'
     | '/tasks'
@@ -542,6 +562,7 @@ export interface FileRouteTypes {
     | '/apps'
     | '/chats'
     | '/events'
+    | '/habits'
     | '/help-center'
     | '/settings'
     | '/tasks'
@@ -568,6 +589,7 @@ export interface FileRouteTypes {
     | '/_authenticated/apps/'
     | '/_authenticated/chats/'
     | '/_authenticated/events/'
+    | '/_authenticated/habits/'
     | '/_authenticated/help-center/'
     | '/_authenticated/settings/'
     | '/_authenticated/tasks/'
@@ -634,6 +656,7 @@ export const routeTree = rootRoute
         "/_authenticated/apps/",
         "/_authenticated/chats/",
         "/_authenticated/events/",
+        "/_authenticated/habits/",
         "/_authenticated/help-center/",
         "/_authenticated/tasks/",
         "/_authenticated/users/"
@@ -710,6 +733,10 @@ export const routeTree = rootRoute
     },
     "/_authenticated/events/": {
       "filePath": "_authenticated/events/index.tsx",
+      "parent": "/_authenticated"
+    },
+    "/_authenticated/habits/": {
+      "filePath": "_authenticated/habits/index.tsx",
       "parent": "/_authenticated"
     },
     "/_authenticated/help-center/": {
