@@ -29,7 +29,7 @@ const tutors: Tutor[] = [
       '¡Vamos paso a paso! Cada pequeño avance cuenta, y hoy ya diste uno más. 🚀',
     symbol: '⭐',
     primaryColor: '#50B4F2',
-    image: 'https://via.placeholder.com/300/50B4F2/FFFFFF?text=Lumen',
+    image: 'https://mindbreeze.vercel.app/images/lumen.png',
   },
   {
     id: 2,
@@ -41,7 +41,7 @@ const tutors: Tutor[] = [
       "Recuerda que puedes remontar ese parcial de Cálculo... como el Madrid en el 90'. ¡Nunca se rinde quien lucha hasta el final! ⚽🔥",
     symbol: '⚡',
     primaryColor: '#FF5F2D',
-    image: 'https://via.placeholder.com/300/FF5F2D/FFFFFF?text=Blaze',
+    image: 'https://mindbreeze.vercel.app/images/blaze.png',
   },
   {
     id: 3,
@@ -53,7 +53,7 @@ const tutors: Tutor[] = [
       '¿Sabías que la mente se fortalece igual que los músculos? Cada reto nuevo que enfrentas es como descubrir un nuevo planeta. 🚀✨',
     symbol: '🌙',
     primaryColor: '#9C6AFF',
-    image: 'https://via.placeholder.com/300/9C6AFF/FFFFFF?text=Nova',
+    image: 'https://mindbreeze.vercel.app/images/nova.png',
   },
   {
     id: 4,
@@ -65,7 +65,7 @@ const tutors: Tutor[] = [
       'La perseverancia no garantiza el éxito inmediato, pero sí construye el carácter que te llevará más lejos que cualquier atajo. 📚🧠',
     symbol: '📖',
     primaryColor: '#2E7D32',
-    image: 'https://via.placeholder.com/300/2E7D32/FFFFFF?text=Sage',
+    image: 'https://mindbreeze.vercel.app/images/sage.png',
   },
 ]
 
