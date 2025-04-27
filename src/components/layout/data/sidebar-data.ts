@@ -24,7 +24,7 @@ export const sidebarData: SidebarData = {
   },
   teams: [
     {
-      name: 'Students App',
+      name: 'MindBreeze',
       logo: GraduationCap,
       plan: '',
     },

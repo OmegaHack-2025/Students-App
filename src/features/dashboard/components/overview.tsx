@@ -2,52 +2,52 @@ import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
 
 const data = [
   {
-    name: 'Jan',
-    total: Math.floor(Math.random() * 5000) + 1000,
+    name: 'Ene',
+    gpa: 3.8,
   },
   {
     name: 'Feb',
-    total: Math.floor(Math.random() * 5000) + 1000,
+    gpa: 3.6,
   },
   {
     name: 'Mar',
-    total: Math.floor(Math.random() * 5000) + 1000,
+    gpa: 3.9,
   },
   {
-    name: 'Apr',
-    total: Math.floor(Math.random() * 5000) + 1000,
+    name: 'Abr',
+    gpa: 3.7,
   },
   {
     name: 'May',
-    total: Math.floor(Math.random() * 5000) + 1000,
+    gpa: 3.5,
   },
   {
     name: 'Jun',
-    total: Math.floor(Math.random() * 5000) + 1000,
+    gpa: 3.8,
   },
   {
     name: 'Jul',
-    total: Math.floor(Math.random() * 5000) + 1000,
+    gpa: 4.0,
   },
   {
-    name: 'Aug',
-    total: Math.floor(Math.random() * 5000) + 1000,
+    name: 'Ago',
+    gpa: 3.9,
   },
   {
     name: 'Sep',
-    total: Math.floor(Math.random() * 5000) + 1000,
+    gpa: 3.7,
   },
   {
     name: 'Oct',
-    total: Math.floor(Math.random() * 5000) + 1000,
+    gpa: 3.8,
   },
   {
     name: 'Nov',
-    total: Math.floor(Math.random() * 5000) + 1000,
+    gpa: 3.9,
   },
   {
-    name: 'Dec',
-    total: Math.floor(Math.random() * 5000) + 1000,
+    name: 'Dic',
+    gpa: 4.0,
   },
 ]
 
@@ -67,10 +67,11 @@ export function Overview() {
           fontSize={12}
           tickLine={false}
           axisLine={false}
-          tickFormatter={(value) => `$${value}`}
+          tickFormatter={(value) => `${value.toFixed(1)}`}
+          domain={[0, 4]}
         />
         <Bar
-          dataKey='total'
+          dataKey='gpa'
           fill='currentColor'
           radius={[4, 4, 0, 0]}
           className='fill-primary'

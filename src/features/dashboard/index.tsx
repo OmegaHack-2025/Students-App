@@ -9,7 +9,6 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Header } from '@/components/layout/header'
 import { Main } from '@/components/layout/main'
-import { TopNav } from '@/components/layout/top-nav'
 import { ProfileDropdown } from '@/components/profile-dropdown'
 import { Search } from '@/components/search'
 import { ThemeSwitch } from '@/components/theme-switch'
@@ -21,7 +20,6 @@ export default function Dashboard() {
     <>
       {/* ===== Top Heading ===== */}
       <Header>
-        <TopNav links={topNav} />
         <div className='ml-auto flex items-center space-x-4'>
           <Search />
           <ThemeSwitch />
@@ -32,22 +30,27 @@ export default function Dashboard() {
       {/* ===== Main ===== */}
       <Main>
         <div className='mb-2 flex items-center justify-between space-y-2'>
-          <h1 className='text-2xl font-bold tracking-tight'>Dashboard</h1>
+          <h1 className='text-2xl font-bold tracking-tight'>
+            Portal Estudiantil
+          </h1>
           <div className='flex items-center space-x-2'>
-            <Button>Download</Button>
+            <Button>Calendario</Button>
           </div>
         </div>
-        <Tabs
-          orientation='vertical'
-          defaultValue='overview'
-          className='space-y-4'
-        >
+        <Tabs defaultValue='overview' className='space-y-4'>
+          <TabsList className='mb-2'>
+            <TabsTrigger value='overview'>Vista General</TabsTrigger>
+            <TabsTrigger value='courses'>Cursos</TabsTrigger>
+            <TabsTrigger value='assignments'>Tareas</TabsTrigger>
+            <TabsTrigger value='grades'>Calificaciones</TabsTrigger>
+          </TabsList>
+
           <TabsContent value='overview' className='space-y-4'>
             <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-4'>
               <Card>
                 <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
                   <CardTitle className='text-sm font-medium'>
-                    Total Revenue
+                    Promedio GPA
                   </CardTitle>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -63,16 +66,16 @@ export default function Dashboard() {
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className='text-2xl font-bold'>$45,231.89</div>
+                  <div className='text-2xl font-bold'>3.8</div>
                   <p className='text-muted-foreground text-xs'>
-                    +20.1% from last month
+                    +0.2 desde el último semestre
                   </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
                   <CardTitle className='text-sm font-medium'>
-                    Subscriptions
+                    Cursos Activos
                   </CardTitle>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -90,15 +93,17 @@ export default function Dashboard() {
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className='text-2xl font-bold'>+2350</div>
+                  <div className='text-2xl font-bold'>5</div>
                   <p className='text-muted-foreground text-xs'>
-                    +180.1% from last month
+                    15 créditos en total
                   </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
-                  <CardTitle className='text-sm font-medium'>Sales</CardTitle>
+                  <CardTitle className='text-sm font-medium'>
+                    Tareas Pendientes
+                  </CardTitle>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     viewBox='0 0 24 24'
@@ -114,16 +119,16 @@ export default function Dashboard() {
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className='text-2xl font-bold'>+12,234</div>
+                  <div className='text-2xl font-bold'>8</div>
                   <p className='text-muted-foreground text-xs'>
-                    +19% from last month
+                    3 con fecha próxima
                   </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
                   <CardTitle className='text-sm font-medium'>
-                    Active Now
+                    Asistencia
                   </CardTitle>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
@@ -139,9 +144,9 @@ export default function Dashboard() {
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className='text-2xl font-bold'>+573</div>
+                  <div className='text-2xl font-bold'>92%</div>
                   <p className='text-muted-foreground text-xs'>
-                    +201 since last hour
+                    +2% desde el mes pasado
                   </p>
                 </CardContent>
               </Card>
@@ -149,7 +154,7 @@ export default function Dashboard() {
             <div className='grid grid-cols-1 gap-4 lg:grid-cols-7'>
               <Card className='col-span-1 lg:col-span-4'>
                 <CardHeader>
-                  <CardTitle>Overview</CardTitle>
+                  <CardTitle>Rendimiento Académico</CardTitle>
                 </CardHeader>
                 <CardContent className='pl-2'>
                   <Overview />
@@ -157,9 +162,9 @@ export default function Dashboard() {
               </Card>
               <Card className='col-span-1 lg:col-span-3'>
                 <CardHeader>
-                  <CardTitle>Recent Sales</CardTitle>
+                  <CardTitle>Actividad Reciente</CardTitle>
                   <CardDescription>
-                    You made 265 sales this month.
+                    Actividades de tus compañeros de clase
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -168,35 +173,50 @@ export default function Dashboard() {
               </Card>
             </div>
           </TabsContent>
+
+          <TabsContent value='courses' className='space-y-4'>
+            <Card>
+              <CardHeader>
+                <CardTitle>Mis Cursos</CardTitle>
+                <CardDescription>
+                  Cursos en los que estás inscrito este semestre
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>Contenido de cursos no implementado aún</p>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value='assignments' className='space-y-4'>
+            <Card>
+              <CardHeader>
+                <CardTitle>Mis Tareas</CardTitle>
+                <CardDescription>
+                  Tareas pendientes y completadas
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>Contenido de tareas no implementado aún</p>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value='grades' className='space-y-4'>
+            <Card>
+              <CardHeader>
+                <CardTitle>Mis Calificaciones</CardTitle>
+                <CardDescription>
+                  Registro de calificaciones por curso
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>Contenido de calificaciones no implementado aún</p>
+              </CardContent>
+            </Card>
+          </TabsContent>
         </Tabs>
       </Main>
     </>
   )
 }
-
-const topNav = [
-  {
-    title: 'Overview',
-    href: 'dashboard/overview',
-    isActive: true,
-    disabled: false,
-  },
-  {
-    title: 'Customers',
-    href: 'dashboard/customers',
-    isActive: false,
-    disabled: true,
-  },
-  {
-    title: 'Products',
-    href: 'dashboard/products',
-    isActive: false,
-    disabled: true,
-  },
-  {
-    title: 'Settings',
-    href: 'dashboard/settings',
-    isActive: false,
-    disabled: true,
-  },
-]

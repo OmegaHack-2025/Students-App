@@ -1,4 +1,4 @@
-# Students App
+# MindBreeze
 
 ## Tech Stack
 
