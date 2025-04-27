@@ -1,4 +1,4 @@
-# University Admin
+# Students App
 
 ## Tech Stack
 
