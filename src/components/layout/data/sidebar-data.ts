@@ -1,17 +1,8 @@
 import {
-  IconBrowserCheck,
   IconCalendar,
   IconChecklist,
   IconLayoutDashboard,
-  IconLockAccess,
-  IconMessages,
-  IconNotification,
   IconPackages,
-  IconPalette,
-  IconSettings,
-  IconTool,
-  IconUserCog,
-  IconUsers,
 } from '@tabler/icons-react'
 import {
   AudioWaveform,
@@ -55,11 +46,6 @@ export const sidebarData: SidebarData = {
           icon: House,
         },
         {
-          title: 'Students',
-          url: '/users',
-          icon: IconUsers,
-        },
-        {
           title: 'Dashboard',
           url: '/dashboard',
           icon: IconLayoutDashboard,
@@ -70,6 +56,11 @@ export const sidebarData: SidebarData = {
           icon: HeartPulse,
         },
         {
+          title: 'Felicitaciones',
+          url: '/apps',
+          icon: IconPackages,
+        },
+        {
           title: 'Events',
           url: '/events',
           icon: IconCalendar,
@@ -78,84 +69,6 @@ export const sidebarData: SidebarData = {
           title: 'Tasks',
           url: '/tasks',
           icon: IconChecklist,
-        },
-        {
-          title: 'Apps',
-          url: '/apps',
-          icon: IconPackages,
-        },
-        {
-          title: 'Chats',
-          url: '/chats',
-          badge: '3',
-          icon: IconMessages,
-        },
-      ],
-    },
-    {
-      title: 'Pages',
-      items: [
-        {
-          title: 'Auth',
-          icon: IconLockAccess,
-          items: [
-            {
-              title: 'Sign In',
-              url: '/sign-in',
-            },
-            {
-              title: 'Sign In (2 Col)',
-              url: '/sign-in-2',
-            },
-            {
-              title: 'Sign Up',
-              url: '/sign-up',
-            },
-            {
-              title: 'Forgot Password',
-              url: '/forgot-password',
-            },
-            {
-              title: 'OTP',
-              url: '/otp',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      title: 'Other',
-      items: [
-        {
-          title: 'Settings',
-          icon: IconSettings,
-          items: [
-            {
-              title: 'Profile',
-              url: '/settings',
-              icon: IconUserCog,
-            },
-            {
-              title: 'Account',
-              url: '/settings/account',
-              icon: IconTool,
-            },
-            {
-              title: 'Appearance',
-              url: '/settings/appearance',
-              icon: IconPalette,
-            },
-            {
-              title: 'Notifications',
-              url: '/settings/notifications',
-              icon: IconNotification,
-            },
-            {
-              title: 'Display',
-              url: '/settings/display',
-              icon: IconBrowserCheck,
-            },
-          ],
         },
       ],
     },
